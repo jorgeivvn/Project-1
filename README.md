@@ -1,4 +1,4 @@
-# Project 1 Memory Game 
+# Project 1 Memory Game
 
 ## Description
 
@@ -17,4 +17,4 @@ Match Match, Match Up, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pair
 
 ## Wireframe for Project
 
-![memorygamepic](http://www.easy68k.com/examples/memoryGame.png)
+See Wirefram.jpg attached along with README.md 
