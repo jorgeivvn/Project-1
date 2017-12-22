@@ -1,0 +1,15 @@
+/*body {
+  background-image: url(joanna-kosinska-340749.jpg);
+  background-size: contain;
+}*/
+
+h1{
+  font-family: 'Gloria Hallelujah', cursive;
+  color: black;
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px;
+  text-decoration: underline;
+  padding: 10px 10px 10px 10px;
+}
