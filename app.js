@@ -1,0 +1,1 @@
+//pseudo-code: 1. Display a grid of 4x4 block of cubes. 2. Click on a cube and display it's color. 3. Click on another cube display it's color 3. Determine if both colors are a match, if match let player know, else flip cubes back to original state. 
