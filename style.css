@@ -12,3 +12,16 @@ h1{
   text-shadow: 2px 2px 4px;
   text-decoration: underline;
 }
+
+.game-cubes {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.cube {
+  float: left;
+  margin: 10px;
+  height: 200px;
+  width: 150px;
+  background: black;
+}
