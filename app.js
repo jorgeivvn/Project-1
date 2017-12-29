@@ -7,12 +7,30 @@ $(document).ready(function() {
   // $(".trigger").click(function() {
   //      $(".overlay").slideToggle();
   //  });
-  $(".cube").click(function(){
-    $(this).css('background', 'red');
-  });
+  // $(".cube").click(function(){
+  //   $(this).css('background', 'red');
+  // });
   let application = {
     cardArray: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9],
-  }
+    init: function() {
+      application.shuffle();
+    },
+    shuffle: function() {
+      let random = 0;
+      let temp = 0;
+      for(i = 1; i < application.cardArray.length; i++) {
+        random = Math.round(Math.random() * i);
+        temp = application.cardArray[i];
+        application.cardArray[i] = application.cardArray[random];
+        application.cardArray[random] = temp;
+      }
+      console.log(application.cardArray);
+    },
+    clickHandlers: function() {
+
+    }
+  };
+  application.init();
 });
 
 // let cubeArray = ['1','1','2','2','3','3','4','4','5','5','6','6','7','7','8','8','9','9'];
