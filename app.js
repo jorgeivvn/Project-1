@@ -1,4 +1,4 @@
-//pseudo-code: 1. Display a grid of 4x4 block of cubes. 2. Click on a cube and display it's color. 3. Click on another cube display it's color 4. Determine if both colors are a match, if match let player know and disappear, else flip cubes back to original state. 5. Let player know he won once all cubes have disappeared.
+//pseudo-code: 1. Display a grid of 4x4 block of cubes. 2. Click on a cube and display a number/letter. 3. Click on another cube display it's number/letter 4. Determine if both are a match, if match let player know and disappear, else flip cubes back to original state. 5. Let player know he won once all cubes have disappeared.
 $(document).ready(function() {
     // all custom jQuery will go here
   //   $("#trigger").click(function() {
@@ -14,6 +14,7 @@ $(document).ready(function() {
     cardArray: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9],
     init: function() {
       application.shuffle();
+      application.assignCubes();
     },
     shuffle: function() {
       let random = 0;
@@ -24,10 +25,25 @@ $(document).ready(function() {
         application.cardArray[i] = application.cardArray[random];
         application.cardArray[random] = temp;
       }
+      application.assignCubes();
       console.log(application.cardArray);
     },
-    clickHandlers: function() {
+    assignCubes: function() {
+      $('.cube').each(function(index) {
+        $(this).attr('data-cube-value', application.cardArray[index]);
+      });
+      application.clickFunctions();
+    },
 
+    clickFunctions: function() {
+      $('.cube').click(function() {
+        $(this).html('<p>'+$(this).data('cubeValue')+'</p>');
+        application.checkMatch();
+      });
+
+      //Click functions to reveal number/symbol/letter
+      //Check for match
+      //Check/Notify when COMPLETE/WINNER
     }
   };
   application.init();

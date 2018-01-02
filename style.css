@@ -21,9 +21,9 @@ h1{
 .cube {
   float: left;
   margin: 10px;
-  height: 200px;
+  height: 150px;
   width: 150px;
-  background: black;
+  background: grey;
 }
 
 /*.overlay {
