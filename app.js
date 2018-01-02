@@ -24,6 +24,7 @@ $(document).ready(function() {
         temp = application.cardArray[i];
         application.cardArray[i] = application.cardArray[random];
         application.cardArray[random] = temp;
+        //fisher yates shuffle 
       }
       application.assignCubes();
       console.log(application.cardArray);
@@ -37,13 +38,23 @@ $(document).ready(function() {
 
     clickFunctions: function() {
       $('.cube').click(function() {
-        $(this).html('<p>'+$(this).data('cubeValue')+'</p>');
+        $(this).html('<p>'+$(this).data('cubeValue')+'</p>').addClass('selected');
         application.checkMatch();
       });
-
       //Click functions to reveal number/symbol/letter
       //Check for match
       //Check/Notify when COMPLETE/WINNER
+    },
+    checkMatch: function() {
+      if($('.selected').length == 2) {
+        if ($('.selected').first().data('cubeValue') === $('.selected').last().data('cubeValue')) {
+          $('.selected').removeClass('selected');
+          //Change background color? to create disappearing effect?
+          //Remove cube
+        } else {
+            //flip cubes back
+        }
+      }
     }
   };
   application.init();
