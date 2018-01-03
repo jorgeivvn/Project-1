@@ -10,6 +10,14 @@ $(document).ready(function() {
   // $(".cube").click(function(){
   //   $(this).css('background', 'red');
   // });
+
+
+
+//   let
+// $('reset-button').click(function(){
+//             location.reload(true);
+//           });
+
   let application = {
     cardArray: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9],
     init: function() {
@@ -24,7 +32,7 @@ $(document).ready(function() {
         temp = application.cardArray[i];
         application.cardArray[i] = application.cardArray[random];
         application.cardArray[random] = temp;
-        //fisher yates shuffle 
+        //fisher yates shuffle
       }
       application.assignCubes();
       console.log(application.cardArray);
@@ -46,14 +54,36 @@ $(document).ready(function() {
       //Check/Notify when COMPLETE/WINNER
     },
     checkMatch: function() {
-      if($('.selected').length == 2) {
-        if ($('.selected').first().data('cubeValue') === $('.selected').last().data('cubeValue')) {
-          $('.selected').removeClass('selected');
+      if($('.selected').length === 2) {
+        if ($('.selected').first().data('cubeValue') == $('.selected').last().data('cubeValue')) {
+          $('.selected').each(function() {
+            // $(this).css('background'), 'white');
+            $(this).animate({opacity: 0.25}).removeClass('remaining');
+            //.removeClass('remaining') I had this at the end of this last function..
+          });
+          $('.selected').each(function() {
+            $(this).removeClass('selected');
+          });
+          // $('.selected').removeClass('selected');
+          // $('.selected').css('background', 'white');
+
           //Change background color? to create disappearing effect?
           //Remove cube
+          application.checkVictory();
         } else {
+          setTimeout(function() {
+            $('.selected').each(function() {
+              $(this).html('').removeClass('selected');
+            });
+          }, 500);
             //flip cubes back
         }
+
+      }
+    },
+    checkVictory: function() {
+      if($('.remaining').length === 0) {
+        alert("YOU ARE VICTORIOUS AND HAVE A GREAT MEMORY!");
       }
     }
   };
