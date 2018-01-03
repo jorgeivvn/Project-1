@@ -12,12 +12,6 @@ $(document).ready(function() {
   // });
 
 
-
-//   let
-// $('reset-button').click(function(){
-//             location.reload(true);
-//           });
-
   let application = {
     cardArray: [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9],
     init: function() {
@@ -75,7 +69,7 @@ $(document).ready(function() {
             $('.selected').each(function() {
               $(this).html('').removeClass('selected');
             });
-          }, 500);
+          }, 1000);
             //flip cubes back
         }
 
