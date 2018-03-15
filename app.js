@@ -52,7 +52,7 @@ $(document).ready(function() {
         if ($('.selected').first().data('cubeValue') == $('.selected').last().data('cubeValue')) {
           $('.selected').each(function() {
             // $(this).css('background'), 'white');
-            $(this).animate({opacity: 0.25}).removeClass('remaining');
+            $(this).animate({opacity: 0}).removeClass('remaining');
             //.removeClass('remaining') I had this at the end of this last function..
           });
           $('.selected').each(function() {

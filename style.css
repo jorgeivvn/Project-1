@@ -18,6 +18,12 @@ h3 {
   text-align: center;
 }
 
+.button {
+  color: red;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
 .game-cubes {
   width: 1080px;
   margin: 0 auto;
